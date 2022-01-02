@@ -27,7 +27,7 @@
       ];
     };
 
-    homeManagerConfigurations.zhora = home-manager.lib.homeManagerConfigurations {
+    homeManagerConfigurations.zhora = home-manager.lib.homeManagerConfiguration {
       inherit system pkgs;
       username = "zhora";
       homeDirectory = "/home/zhora";
