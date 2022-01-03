@@ -1,5 +1,5 @@
 {
-  description = "My NixOS Configuration";
+  description = "My NixOS Flake";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-21.11";
@@ -30,6 +30,7 @@
     homeManagerConfigurations.zhora = home-manager.lib.homeManagerConfiguration {
       inherit system pkgs;
       username = "zhora";
+      stateVersion = "21.11";
       homeDirectory = "/home/zhora";
       configuration = {
         imports = [
