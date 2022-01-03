@@ -11,7 +11,13 @@
     <p><a href="https://twitter.com/etiennejcb/">Animation by Étienne Jacob</a></p>
 </h4>
 
-## :snowman_with_snow: Backup of my current NixOS configuration wrapped as a [Nix Flake](https://nixos.wiki/wiki/Flakes).
+## :cloud_with_snow: Backup of my current NixOS configuration wrapped as a [Nix Flake](https://nixos.wiki/wiki/Flakes).
+
+## :snowman_with_snow: Learning Resources
+
+- ### :tv: [NixOS Tutorial Series by Wil Taylor](https://www.youtube.com/playlist?list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
+
+- ### :man_technologist: [Personal NixOS Configuration by Gabriel Volpe](https://github.com/gvolpe/nix-config)
 
 <!-- MARKDOWN LINKS -->
 
