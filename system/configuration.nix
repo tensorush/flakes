@@ -62,9 +62,9 @@ in {
     displayManager.sddm.enable = true;
     desktopManager.plasma5.enable = true;
 
-    # Configure keymap in X11.
+    # Configure keyboard layouts.
     layout = "us, ru";
-    xkbOptions = "eurosign:e";
+    xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
   };
 
   # Enable sound.
