@@ -63,13 +63,23 @@ in {
     desktopManager.plasma5.enable = true;
 
     # Configure keymap in X11.
-    layout = "us";
+    layout = "us, ru";
     xkbOptions = "eurosign:e";
   };
 
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+
+  # Specify videocard drivers.
+  services.xserver.videoDrivers = [ "nvidia" ];
+  systemd.services.nvidia-control-devices = {
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig.ExecStart = "${pkgs.linuxPackages.nvidia_x11.bin}/bin/nvidia-smi";
+  };
+
+  # Allow unfree packages.
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -86,7 +96,7 @@ in {
     bottom
     ffmpeg
     neofetch
-
+    
     # Virtualisation
     docker
   ];

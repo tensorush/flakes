@@ -18,10 +18,12 @@
   home.packages = with pkgs; [
     vlc
     gimp
+    clang
     vscode
     shutter
     blender
     micromamba
+    cudatoolkit
     libreoffice
     cloudcompare
   ];
