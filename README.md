@@ -11,7 +11,7 @@
     <p><a href="https://twitter.com/etiennejcb/">Animation by Étienne Jacob</a></p>
 </h4>
 
-## :cloud_with_snow: Backup of my current NixOS configuration wrapped as a [Nix Flake](https://nixos.wiki/wiki/Flakes).
+## :cloud_with_snow: My current NixOS configuration wrapped into a [Nix Flake](https://nixos.wiki/wiki/Flakes).
 
 ## :snowman_with_snow: Learning Resources
 
