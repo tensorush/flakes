@@ -15,6 +15,8 @@
 
 ## :snowman_with_snow: Learning Resources
 
+- ### :card_file_box: [Awesome Nix Resources List](https://github.com/nix-community/awesome-nix)
+
 - ### :tv: [NixOS Tutorial Series by Wil Taylor](https://www.youtube.com/playlist?list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
 
 - ### :man_technologist: [Personal NixOS Configuration by Gabriel Volpe](https://github.com/gvolpe/nix-config)
