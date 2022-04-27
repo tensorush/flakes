@@ -1,6 +1,7 @@
 # :snowflake: **My NixOS Flake**
 
-[![forthebadge](https://forthebadge.com/images/badges/winter-is-coming.svg)](https://forthebadge.com)
+[![built-with-nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
+[![for-the-badge](https://forthebadge.com/images/badges/winter-is-coming.svg)](https://forthebadge.com)
 [![MIT License][license-shield]][license-url]
 
 <p align="center">
@@ -18,6 +19,8 @@
 - ### :card_file_box: [Awesome Nix Resources List](https://github.com/nix-community/awesome-nix)
 
 - ### :tv: [NixOS Tutorial Series by Wil Taylor](https://www.youtube.com/playlist?list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
+
+- ### :thought_balloon: [Nix Programming Blogposts by Sam Parkinson](https://www.sam.today/blog/environments-with-nix-shell-learning-nix-pt-1/)
 
 - ### :man_technologist: [Personal NixOS Configuration by Gabriel Volpe](https://github.com/gvolpe/nix-config)
 
