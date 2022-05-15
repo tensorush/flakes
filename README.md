@@ -20,7 +20,11 @@
 
 - ### :tv: [NixOS Tutorial Series by Wil Taylor](https://www.youtube.com/playlist?list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
 
-- ### :thought_balloon: [Nix Programming Blogposts by Sam Parkinson](https://www.sam.today/blog/environments-with-nix-shell-learning-nix-pt-1/)
+- ### :thought_balloon: [Nix Flakes Blog Posts by Eeelco Dolstra](https://www.tweag.io/blog/2020-05-25-flakes/)
+
+- ### :thought_balloon: [How to Learn Nix Blog Posts by Ian Henry](https://ianthehenry.com/posts/how-to-learn-nix/)
+
+- ### :thought_balloon: [Nix Programming Blog Posts by Sam Parkinson](https://www.sam.today/blog/environments-with-nix-shell-learning-nix-pt-1/)
 
 - ### :man_technologist: [Personal NixOS Configuration by Gabriel Volpe](https://github.com/gvolpe/nix-config)
 
