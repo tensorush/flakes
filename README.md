@@ -8,7 +8,7 @@
     <img src="https://bleuje.github.io/gifset/2017/gifs/2017_27_folds1.gif">
 </p>
 
-<h4 align="center"> 
+<h4 align="center">
     <p><a href="https://twitter.com/etiennejcb/">Animation by Étienne Jacob</a></p>
 </h4>
 
@@ -21,6 +21,8 @@
 - ### :tv: [NixOS Tutorial Series by Wil Taylor](https://www.youtube.com/playlist?list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
 
 - ### :thought_balloon: [Nix Flakes Blog Posts by Eeelco Dolstra](https://www.tweag.io/blog/2020-05-25-flakes/)
+
+- ### :tv: [Nixology Tutorial Series by Burke Libbey](https://www.youtube.com/playlist?list=PLRGI9KQ3_HP_OFRG6R-p4iFgMSK1t5BHs)
 
 - ### :thought_balloon: [How to Learn Nix Blog Posts by Ian Henry](https://ianthehenry.com/posts/how-to-learn-nix/)
 
