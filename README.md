@@ -1,9 +1,5 @@
 # :snowflake: **My NixOS Flake**
 
-[![for-the-badge](https://forthebadge.com/images/badges/winter-is-coming.svg)](https://forthebadge.com)
-[![built-with-nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
-[![MIT License][license-shield]][license-url]
-
 <p align="center">
     <img src="https://bleuje.github.io/gifset/2017/gifs/2017_27_folds1.gif">
 </p>
@@ -47,8 +43,3 @@
 - ### :thought_balloon: [Nix Programming Blog Posts by Sam Parkinson](https://www.sam.today/blog/environments-with-nix-shell-learning-nix-pt-1/)
 
 - ### :thought_balloon: [Nix Terminology Primer Blog Post by Stéphan Kochen](https://stephank.nl/p/2020-06-01-a-nix-primer-by-a-newcomer.html)
-
-<!-- MARKDOWN LINKS -->
-
-[license-shield]: https://img.shields.io/github/license/tensorush/My-NixOS-Flake.svg?style=for-the-badge
-[license-url]: https://github.com/tensorush/My-NixOS-Flake/blob/master/LICENSE.md
