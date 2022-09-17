@@ -83,22 +83,31 @@ in {
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    # Shell
-    fish
-
-    # Browser
-    brave
-
-    # CLI utilities
+    fd
+    fzf
+    gdb
     git
-    ncdu
+    zig
+    zls
+    qemu
     wget
+    clang
+    nvtop
+    rustc
+    unzip
     bottom
     ffmpeg
+    git-hub
+    gparted
+    netdata
+    nushell
+    python3
+    weechat
+    manpages
     neofetch
-    
-    # Virtualisation
-    docker
+    valgrind
+    wasmtime
+    cudatoolkit
   ];
 
   # Set fonts.

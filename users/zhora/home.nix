@@ -18,13 +18,11 @@
   home.packages = with pkgs; [
     vlc
     gimp
-    clang
-    vscode
-    shutter
-    blender
-    micromamba
-    cudatoolkit
+    brave
+    helix
+    discord
+    alacritty
+    flameshot
     libreoffice
-    cloudcompare
   ];
 }
