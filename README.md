@@ -16,6 +16,8 @@
 
 - ### :black_joker: [NixOS Cheat Sheet](https://nixos.wiki/index.php?title=Cheatsheet&useskin=vector)
 
+- ### :tv: [Summer of Nix 2022](https://www.youtube.com/playlist?list=PLt4-_lkyRrOMWyp5G-m_d1wtTcbBaOxZk)
+
 - ### :globe_with_meridians: [NixOS Wiki Web Site](https://nixos.wiki/)
 
 - ### :globe_with_meridians: [NixOS Learn Web Site](https://nixos.org/learn.html)
