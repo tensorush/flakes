@@ -19,7 +19,6 @@
     vlc
     gimp
     brave
-    helix
     discord
     alacritty
     flameshot

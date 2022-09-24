@@ -91,12 +91,15 @@ in {
     zls
     qemu
     wget
+    cargo
     clang
+    helix
     nvtop
     rustc
     unzip
     bottom
     ffmpeg
+    rustup
     git-hub
     gparted
     netdata
@@ -105,9 +108,11 @@ in {
     weechat
     manpages
     neofetch
+    starship
     valgrind
     wasmtime
     cudatoolkit
+    rust-analyzer
   ];
 
   # Set fonts.
