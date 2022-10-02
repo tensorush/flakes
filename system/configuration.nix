@@ -84,33 +84,46 @@ in {
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     fd
+    bat
+    exa
     fzf
     gdb
     git
     zig
     zls
+    grex
     qemu
     wget
+    broot
     cargo
     clang
+    delta
+    gitui
     helix
     nvtop
+    procs
     rustc
     unzip
     bottom
     ffmpeg
     rustup
+    zoxide
+    du-dust
     git-hub
     gparted
     netdata
     nushell
     python3
+    ripgrep
     weechat
     manpages
     neofetch
     starship
+    tealdeer
     valgrind
     wasmtime
+    hyperfine
+    difftastic
     cudatoolkit
     rust-analyzer
   ];
