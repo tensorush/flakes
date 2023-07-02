@@ -1,4 +1,4 @@
-# :snowflake: **My NixOS Flake**
+# :snowflake: **flake**
 
 <p align="center">
     <img src="https://bleuje.github.io/gifset/2017/gifs/2017_27_folds1.gif">
