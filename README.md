@@ -1,4 +1,4 @@
-# :snowflake: **flake**
+# :snowflake: **flakes**
 
 <p align="center">
     <img src="https://bleuje.github.io/gifset/2017/gifs/2017_27_folds1.gif">
@@ -8,7 +8,7 @@
     <p><a href="https://twitter.com/etiennejcb/">Animation by Étienne Jacob</a></p>
 </h4>
 
-## :cloud_with_snow: My current NixOS configuration wrapped into a Nix Flake.
+## :cloud_with_snow: My current NixOS configuration and environments wrapped into Nix Flakes.
 
 ## :snowman_with_snow: Learning Resources
 
