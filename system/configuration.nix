@@ -3,11 +3,12 @@
 # Define custom fonts
 let customFonts = pkgs.nerdfonts.override {
   fonts = [
-    "JetBrainsMono"
+    "CascadiaCode"
   ];
 };
 
-in {
+in
+{
   # Specify hardware imports.
   imports =
     [
@@ -23,23 +24,13 @@ in {
   # Configure networking settings.
   networking = {
     useDHCP = false;
+    firewall.enable = true;
     hostName = "tensorush";
-    interfaces.enp3s0.useDHCP = true;
+    interfaces.enp0s10.useDHCP = true;
   };
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
-
-  # Enable virtualisation.
-  virtualisation = {
-    docker = {
-      enable = true;
-      autoPrune = {
-        enable = true;
-        dates = "weekly";
-      };
-    };
-  };
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -52,6 +43,11 @@ in {
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.openssh.settings.PermitRootLogin = "no";
+  services.openssh.settings.PasswordAuthentication = true;
+
+  # Enable QEMU agent.
+  services.spice-vdagentd.enable = true;
 
   # Configure X11 windowing system.
   services.xserver = {
@@ -71,13 +67,6 @@ in {
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  # Specify videocard drivers.
-  services.xserver.videoDrivers = [ "nvidia" ];
-  systemd.services.nvidia-control-devices = {
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig.ExecStart = "${pkgs.linuxPackages.nvidia_x11.bin}/bin/nvidia-smi";
-  };
-
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
@@ -85,38 +74,24 @@ in {
   environment.systemPackages = with pkgs; [
     fd
     bat
-    exa
     fzf
     gdb
     git
-    zig
-    zls
-    grex
-    qemu
     wget
     broot
-    cargo
     clang
     delta
-    gitui
     helix
-    nvtop
     procs
-    rustc
-    unzip
     bottom
-    ffmpeg
     rustup
+    zellij
     zoxide
     du-dust
     git-hub
-    gparted
     netdata
     nushell
-    python3
     ripgrep
-    weechat
-    manpages
     neofetch
     starship
     tealdeer
@@ -124,23 +99,15 @@ in {
     wasmtime
     hyperfine
     difftastic
-    cudatoolkit
-    rust-analyzer
   ];
 
   # Set fonts.
-  fonts.fonts = with pkgs; [
-    customFonts
-  ];
+  fonts.fonts = with pkgs; [ customFonts ];
 
-  # Configure SUID wrappers for programs.
-  programs.fish.enable = true;
-
-  # Define user accounts.
-  # Don't forget to set passwords with ‘passwd’.
-  users.users.zhora = {
-    shell = pkgs.fish;
+  # Define user accounts. Don't forget to set passwords with ‘passwd’.
+  users.users.jora = {
     isNormalUser = true;
+    shell = pkgs.nushell;
     extraGroups = [ "wheel" ];
   };
 
@@ -167,6 +134,9 @@ in {
     '';
   };
 
+  # Don't require password for sudo.
+  security.sudo.wheelNeedsPassword = false;
+
   # System state version - better not change it.
-  system.stateVersion = "21.11";
+  system.stateVersion = "23.05";
 }

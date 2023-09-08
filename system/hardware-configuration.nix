@@ -2,35 +2,23 @@
 
 {
   imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
+    (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
-  boot = {
-    initrd.availableKernelModules = [
-      "xhci_pci" "ehci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod"
-    ];
-    initrd.kernelModules = [ ];
-    kernelModules = [
-      "kvm-intel"
-    ];
-    extraModulePackages = [ ];
-  };
+  boot.initrd.availableKernelModules = [ "xhci_pci" "uhci_hcd" "virtio_pci" "usbhid" "usb_storage" "sr_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-label/NIXROOT";
+    device = "/dev/disk/by-label/nixos";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-label/NIXBOOT";
+    device = "/dev/disk/by-label/boot";
     fsType = "vfat";
   };
 
-  swapDevices = [
-    {
-      device = "/.swapfile";
-    }
-  ];
-
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  swapDevices = [ ];
 }
