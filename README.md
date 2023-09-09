@@ -1,10 +1,13 @@
 ## :snowflake: **flake**
 
+[![Nix][nix-shield]][nix-url]
 [![License][license-shield]][license-url]
 
-### My current NixOS flake for the ARM64 UTM VM.
+### My NixOS configuration flake for the ARM64 UTM VM.
 
 ### :snowman_with_snow: Learning Resources
+
+- #### :tv: [NixCon](https://www.youtube.com/@NixCon/playlists)
 
 - #### :globe_with_meridians: [Nix Pills Web Site](https://nixos.org/guides/nix-pills/)
 
@@ -24,7 +27,11 @@
 
 - #### :tv: [Nix Tutorial Series by Jon Ringer](https://www.youtube.com/user/elitespartan117j27/videos)
 
+- #### :book: [NixOS & Flakes Book by Ryan Yin](https://nixos-and-flakes.thiscute.world/)
+
 - #### :tv: [NixOS Tutorial Series by Wil Taylor](https://www.youtube.com/playlist?list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
+
+- #### :tv: [NixOS on a ThinkPad Tutorial Series by Chris McDonough](https://www.youtube.com/playlist?list=PLa01scHy0YEmg8trm421aYq4OtPD8u1SN)
 
 - #### :thought_balloon: [Nix Flakes Blog Posts by Eelco Dolstra](https://www.tweag.io/blog/2020-05-25-flakes/)
 
@@ -40,7 +47,13 @@
 
 - #### :thought_balloon: [Nix Terminology Primer Blog Post by Stéphan Kochen](https://stephank.nl/p/2020-06-01-a-nix-primer-by-a-newcomer.html)
 
+- #### :thought_balloon: [Nix from First Principles: Flake Edition Blog Posts by Tony Finn](https://tonyfinn.com/blog/nix-from-first-principles-flake-edition/)
+
+- #### :thought_balloon: [Tips & Tricks for NixOS Desktop Discourse Post by Alex Kladov](https://discourse.nixos.org/t/tips-tricks-for-nixos-desktop/28488)
+
 <!-- MARKDOWN LINKS -->
 
+[nix-shield]: https://builtwithnix.org/badge.svg
+[nix-url]: https://builtwithnix.org
 [license-shield]: https://img.shields.io/github/license/tensorush/cv.svg?style=for-the-badge&labelColor=black
 [license-url]: https://github.com/tensorush/flake/blob/master/LICENSE.md

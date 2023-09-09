@@ -1,21 +1,7 @@
 { config, pkgs, ... }:
 
-# Define custom fonts
-let customFonts = pkgs.nerdfonts.override {
-  fonts = [
-    "CascadiaCode"
-  ];
-};
-
-in
 {
-  # Specify hardware imports.
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
-  # Use the systemd-boot EFI boot loader.
+  # Use systemd-boot EFI boot loader.
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
@@ -24,16 +10,19 @@ in
   # Configure networking settings.
   networking = {
     useDHCP = false;
-    firewall.enable = true;
     hostName = "tensorush";
+    firewall.enable = false;
     interfaces.enp0s10.useDHCP = true;
   };
 
-  # Set your time zone.
+  # Set time zone.
   time.timeZone = "Europe/Moscow";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+
+  # Set fonts.
+  fonts.fonts = [ pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; } ];
 
   # Specify console configuration.
   console = {
@@ -41,58 +30,62 @@ in
     keyMap = "us";
   };
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.openssh.settings.PermitRootLogin = "no";
-  services.openssh.settings.PasswordAuthentication = true;
+  # Enable services. OpenSSH daemon.
+  services = {
+    # Enable QEMU agent.
+    services.spice-vdagentd.enable = true;
 
-  # Enable QEMU agent.
-  services.spice-vdagentd.enable = true;
+    # Enable services. OpenSSH daemon.
+    openssh = {
+      enable = true;
+      settings.PermitRootLogin = "no";
+      settings.PasswordAuthentication = true;
+    };
 
-  # Configure X11 windowing system.
-  services.xserver = {
-    # Enable the system.
-    enable = true;
+    # Configure X11 windowing System.
+    xserver = {
+      # Enable system.
+      dpi = 220;
+      enable = true;
 
-    # Enable the Plasma 5 Desktop Environment.
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
-
-    # Configure keyboard layouts.
-    layout = "us, ru";
-    xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
+      # Configure keyboard layouts.
+      layout = "us, ru";
+      xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
+    };
   };
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # Allow unfree and unsupported packages.
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnsupportedSystem = true;
+  };
 
-  # Allow unfree packages.
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile.
+  # List packages installed in system.
   environment.systemPackages = with pkgs; [
     fd
+    gh
+    jq
     bat
     fzf
     gdb
     git
     wget
     broot
-    clang
     delta
     helix
+    ninja
     procs
     bottom
-    rustup
+    statix
+    vscode
     zellij
     zoxide
     du-dust
-    git-hub
+    gnumake
     netdata
     nushell
+    openssl
     ripgrep
-    neofetch
     starship
     tealdeer
     valgrind
@@ -101,9 +94,6 @@ in
     difftastic
   ];
 
-  # Set fonts.
-  fonts.fonts = with pkgs; [ customFonts ];
-
   # Define user accounts. Don't forget to set passwords with ‘passwd’.
   users.users.jora = {
     isNormalUser = true;
@@ -111,13 +101,13 @@ in
     extraGroups = [ "wheel" ];
   };
 
+  # Don't require password for sudo.
+  security.sudo.wheelNeedsPassword = false;
+
   # Specify Nix daemon configuration.
   nix = {
-    # Make it snow ;)
+    # Enable unstable package channel.
     package = pkgs.nixUnstable;
-
-    # Automate `nix-store --optimise`.
-    autoOptimiseStore = true;
 
     # Automate garbage collection.
     gc = {
@@ -133,9 +123,6 @@ in
       experimental-features = nix-command flakes
     '';
   };
-
-  # Don't require password for sudo.
-  security.sudo.wheelNeedsPassword = false;
 
   # System state version - better not change it.
   system.stateVersion = "23.05";

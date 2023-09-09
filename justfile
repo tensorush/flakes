@@ -1,8 +1,20 @@
-apl-flk:
-    nixos-rebuild switch --flake ".#tensorush"
+apl-sys:
+    nixos-rebuild switch --flake .#tensorush
 
-tst-flk:
-    nixos-rebuild test --flake ".#tensorush"
+apl-hmm:
+    home-manager switch --flake .#tensorush
 
-upd-flk:
+tst:
+    nixos-rebuild test --flake .#tensorush
+
+fmt:
+    nix run nixpkgs#statix -- check ./
+
+gen:
+    nixos-generate-config
+
+upd:
     nix flake update
+
+chk:
+    nix flake check

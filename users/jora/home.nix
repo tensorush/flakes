@@ -1,14 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "jora";
-  home.stateVersion = "23.05";
-  home.homeDirectory = "/home/jora";
-  home.packages = with pkgs; [ brave ];
+  home = {
+    username = "jora";
+    stateVersion = "23.05";
+    homeDirectory = "/home/jora";
+  };
 
-  programs.gpg.enable = true;
-  programs.home-manager.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnsupportedSystem = true;
+  programs = {
+    gpg.enable = true;
+    home-manager.enable = true;
+  };
 }

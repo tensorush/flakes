@@ -1,14 +1,12 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")
-  ];
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "uhci_hcd" "virtio_pci" "usbhid" "usb_storage" "sr_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
-  boot.kernelModules = [ ];
+  boot = {
+    initrd.availableKernelModules = [ "xhci_pci" "uhci_hcd" "virtio_pci" "usbhid" "usb_storage" "sr_mod" ];
+    initrd.kernelModules = [ ];
+    extraModulePackages = [ ];
+    kernelModules = [ ];
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";

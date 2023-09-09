@@ -1,5 +1,5 @@
 {
-  description = "My NixOS Flake";
+  description = "My NixOS configuration flake for the ARM64 UTM VM.";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.05";
@@ -10,33 +10,20 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
-    let
-      lib = nixpkgs.lib;
+  outputs = { nixpkgs, home-manager, ... }: {
+    nixosConfigurations.tensorush = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-    in
-    {
-      nixosConfigurations.tensorush = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./system/configuration.nix
-        ];
-      };
+      modules = [
+        ./system/configuration.nix
+        ./system/hardware-configuration.nix
 
-      homeManagerConfigurations.jora = home-manager.lib.homeManagerConfiguration {
-        inherit system pkgs;
-        username = "jora";
-        stateVersion = "23.05";
-        homeDirectory = "/home/jora";
-        configuration = {
-          imports = [
-            ./users/jora/home.nix
-          ];
-        };
-      };
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.jora = import ./users/jora/home.nix;
+        }
+      ];
     };
+  };
 }
