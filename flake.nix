@@ -1,5 +1,5 @@
 {
-  description = "My NixOS configuration flake for the ARM64 UTM VM.";
+  description = "My NixOS configuration flakes.";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.05";
