@@ -1,7 +1,7 @@
-apl-sys:
+swt-sys:
     nixos-rebuild switch --flake .#tensorush
 
-apl-hmm:
+swt-hmm:
     home-manager switch --flake .#tensorush
 
 tst:

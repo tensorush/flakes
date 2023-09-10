@@ -7,11 +7,15 @@
 
 ### :cloud_with_snow: Hosts
 
-#### :cyclone: [VM AARCH64 UTM](systems/vm-aarch64-utm/)
+|               Host                | Compositor |  Bar   | Switcher | Terminal |  Shell  | GUI / CLI Editor |
+|:---------------------------------:|:----------:|:------:|:--------:|:--------:|:-------:|:----------------:|
+| [UTM aarch64](hosts/utm-aarch64/) |  Hyprland  | Waybar |   Rofi   |  Zellij  | Nushell |  VSCode / Helix  |
 
 ### :snowman_with_snow: Resources
 
-- #### :tv: [NixCon](https://www.youtube.com/@NixCon/playlists)
+- #### :tv: [NixCon Videos](https://www.youtube.com/@NixCon/playlists)
+
+- #### :tv: [nix.dev Web Site](https://nix.dev/)
 
 - #### :globe_with_meridians: [Nix Pills Web Site](https://nixos.org/guides/nix-pills/)
 
@@ -20,6 +24,10 @@
 - #### :tv: [Summer of Nix 2022](https://www.youtube.com/playlist?list=PLt4-_lkyRrOMWyp5G-m_d1wtTcbBaOxZk)
 
 - #### :globe_with_meridians: [NixOS Wiki Web Site](https://nixos.wiki/)
+
+- #### :book: [Nix Reference Manual](https://nixos.org/manual/nix/stable/language/)
+
+- #### :book: [NixOS in Production Book by Gabriella Gonzalez](https://leanpub.com/nixos-in-production)
 
 - #### :globe_with_meridians: [NixOS Learn Web Site](https://nixos.org/learn.html)
 
@@ -48,6 +56,8 @@
 - #### :thought_balloon: [Nix Programming Blog Posts by Sam Parkinson](https://www.sam.today/blog/environments-with-nix-shell-learning-nix-pt-1/)
 
 - #### :thought_balloon: [Nix Terminology Primer Blog Post by Stéphan Kochen](https://stephank.nl/p/2020-06-01-a-nix-primer-by-a-newcomer.html)
+
+- #### :thought_balloon: [Erase Your Darlings Blog Post by Graham Christensen](https://grahamc.com/blog/erase-your-darlings/)
 
 - #### :tv: [NixOS on a ThinkPad Tutorial Series by Chris McDonough](https://www.youtube.com/playlist?list=PLa01scHy0YEmg8trm421aYq4OtPD8u1SN)
 

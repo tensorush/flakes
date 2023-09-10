@@ -1,10 +1,27 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
+  # System state version - better not change it.
+  system.stateVersion = "23.05";
+
+  # Don't require password for sudo.
+  security.sudo.wheelNeedsPassword = false;
+
+  # Define user accounts. Don't forget to set passwords with ‘passwd’.
+  users.users.jora = {
+    isNormalUser = true;
+    shell = pkgs.nushell;
+    extraGroups = [ "networkmanager" "wheel" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519  jora"
+    ];
+  };
+
   # Use systemd-boot EFI boot loader.
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
+    systemd-boot.configurationLimit = 10;
   };
 
   # Configure networking settings.
@@ -21,21 +38,50 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Set fonts.
-  fonts.fonts = [ pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; } ];
-
   # Specify console configuration.
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
 
-  # Enable services. OpenSSH daemon.
+  # Set fonts.
+  fonts.fonts = [ pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; } ];
+
+  # Specify Nix daemon configuration.
+  nix = {
+    # Enable unstable package channel.
+    package = pkgs.nixUnstable;
+
+    # Optimize storage automatically.
+    settings.auto-optimise-store = true;
+
+    # Automate garbage collection.
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 1w";
+    };
+
+    # Enable extra options.
+    extraOptions = ''
+      keep-outputs = true
+      keep-derivations = true
+      experimental-features = nix-command flakes
+    '';
+  };
+
+  # Allow unfree and unsupported packages.
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnsupportedSystem = true;
+  };
+
+  # Enable services.
   services = {
     # Enable QEMU agent.
     services.spice-vdagentd.enable = true;
 
-    # Enable services. OpenSSH daemon.
+    # Enable OpenSSH daemon.
     openssh = {
       enable = true;
       settings.PermitRootLogin = "no";
@@ -54,34 +100,30 @@
     };
   };
 
-  # Allow unfree and unsupported packages.
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnsupportedSystem = true;
-  };
-
   # List packages installed in system.
   environment.systemPackages = with pkgs; [
     fd
     gh
     jq
     bat
+    eza
     fzf
-    gdb
     git
+    curl
+    just
     wget
     broot
     delta
+    gnupg
     helix
-    ninja
     procs
+    unzip
     bottom
-    statix
     vscode
+    waybar
     zellij
     zoxide
     du-dust
-    gnumake
     netdata
     nushell
     openssl
@@ -89,41 +131,8 @@
     starship
     tealdeer
     valgrind
-    wasmtime
+    alejandra
     hyperfine
     difftastic
   ];
-
-  # Define user accounts. Don't forget to set passwords with ‘passwd’.
-  users.users.jora = {
-    isNormalUser = true;
-    shell = pkgs.nushell;
-    extraGroups = [ "wheel" ];
-  };
-
-  # Don't require password for sudo.
-  security.sudo.wheelNeedsPassword = false;
-
-  # Specify Nix daemon configuration.
-  nix = {
-    # Enable unstable package channel.
-    package = pkgs.nixUnstable;
-
-    # Automate garbage collection.
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-
-    # Enable extra options.
-    extraOptions = ''
-      keep-outputs = true
-      keep-derivations = true
-      experimental-features = nix-command flakes
-    '';
-  };
-
-  # System state version - better not change it.
-  system.stateVersion = "23.05";
 }

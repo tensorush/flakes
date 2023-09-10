@@ -11,19 +11,21 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }: {
-    nixosConfigurations.tensorush = nixpkgs.lib.nixosSystem {
-      system = "aarch64-linux";
-      modules = [
-        ./system/configuration.nix
-        ./system/hardware-configuration.nix
+    nixosConfigurations = {
+      tensorush = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/utm-aarch64/configuration.nix
+          ./hosts/utm-aarch64/hardware-configuration.nix
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.jora = import ./users/jora/home.nix;
-        }
-      ];
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jora = import ./users/jora/home.nix;
+          }
+        ];
+      };
     };
   };
 }
