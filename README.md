@@ -5,11 +5,13 @@
 
 ### My NixOS configuration flakes.
 
+<!--
 ### :cloud_with_snow: Hosts
 
 |               Host                | Compositor |  Bar   | Switcher | Terminal |  Shell  | GUI / CLI Editor |
 |:---------------------------------:|:----------:|:------:|:--------:|:--------:|:-------:|:----------------:|
 | [UTM aarch64](hosts/utm-aarch64/) |  Hyprland  | Waybar |   Rofi   |  Zellij  | Nushell |  VSCode / Helix  |
+-->
 
 ### :snowman_with_snow: Resources
 
@@ -26,8 +28,6 @@
 - #### :globe_with_meridians: [NixOS Wiki Web Site](https://nixos.wiki/)
 
 - #### :book: [Nix Reference Manual](https://nixos.org/manual/nix/stable/language/)
-
-- #### :book: [NixOS in Production Book by Gabriella Gonzalez](https://leanpub.com/nixos-in-production)
 
 - #### :globe_with_meridians: [NixOS Learn Web Site](https://nixos.org/learn.html)
 
@@ -54,6 +54,8 @@
 - #### :man_technologist: [Personal NixOS Configuration by Gabriel Volpe](https://github.com/gvolpe/nix-config)
 
 - #### :thought_balloon: [Nix Programming Blog Posts by Sam Parkinson](https://www.sam.today/blog/environments-with-nix-shell-learning-nix-pt-1/)
+
+- #### :book: [NixOS in Production Book by Gabriella Gonzalez](https://leanpub.com/nixos-in-production)
 
 - #### :thought_balloon: [Nix Terminology Primer Blog Post by Stéphan Kochen](https://stephank.nl/p/2020-06-01-a-nix-primer-by-a-newcomer.html)
 
