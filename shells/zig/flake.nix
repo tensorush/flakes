@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
-  
+
   outputs = {
     self,
     nixpkgs,
@@ -31,7 +31,7 @@
               llvm
               clang
             ]);
-          hardeningDisable = [ "all" ];
+          hardeningDisable = ["all"];
         };
       }
     );
