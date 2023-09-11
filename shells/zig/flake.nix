@@ -19,17 +19,17 @@
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = with pkgs;
             [
-                zls
-                zlib
-                cmake
-                ninja
-                libxml2
-                wasmtime
+              zls
+              zlib
+              cmake
+              ninja
+              libxml2
+              wasmtime
             ]
             ++ (with llvmPackages_16; [
-                lld
-                llvm
-                clang
+              lld
+              llvm
+              clang
             ]);
           hardeningDisable = [ "all" ];
         };
