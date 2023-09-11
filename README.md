@@ -9,9 +9,9 @@
 
 ### :cloud_with_snow: Systems
 
-|               Host                | Compositor |  Bar   | Launcher | Explorer | Terminal |  Shell  | Editor |
-|:---------------------------------:|:----------:|:------:|:--------:|:--------:|:--------:|:-------:|:------:|
-| [UTM aarch64](hosts/utm-aarch64/) |   Plasma   | Plasma |  Plasma  | Dolphin  | WezTerm  | Nushell | VSCode |
+|       Host        | Compositor |  Bar   | Launcher | Explorer | Terminal |  Shell  | Editor |
+|:-----------------:|:----------:|:------:|:--------:|:--------:|:--------:|:-------:|:------:|
+| [UTM](hosts/utm/) |   Plasma   | Plasma |  Plasma  | Dolphin  | WezTerm  | Nushell | VSCode |
 
 <!-- |          Desktop x86_64           |   River    | Waybar |   Rofi   |  Thunar  | Alacritty | Nushell | Helix  | -->
 
@@ -83,10 +83,10 @@
 
 <!-- MARKDOWN LINKS -->
 
-[ci-shield]: https://img.shields.io/github/actions/workflow/status/tensorush/flakes/ci.yaml?branch=main&style=for-the-badge&logo=github&label=CI&labelColor=black
-[ci-url]: https://github.com/tensorush/flakes/blob/main/.github/workflows/ci.yaml
-[cd-shield]: https://img.shields.io/github/actions/workflow/status/tensorush/flakes/cd.yaml?branch=main&style=for-the-badge&logo=github&label=CD&labelColor=black
-[cd-url]: https://github.com/tensorush/flakes/blob/main/.github/workflows/cd.yaml
+[ci-shield]: https://img.shields.io/github/actions/workflow/status/tensorush/flakes/ci.yaml?branch=master&style=for-the-badge&logo=github&label=CI&labelColor=black
+[ci-url]: https://github.com/tensorush/flakes/blob/master/.github/workflows/ci.yaml
+[cd-shield]: https://img.shields.io/github/actions/workflow/status/tensorush/flakes/cd.yaml?branch=master&style=for-the-badge&logo=github&label=CD&labelColor=black
+[cd-url]: https://github.com/tensorush/flakes/blob/master/.github/workflows/cd.yaml
 [nix-shield]: https://builtwithnix.org/badge.svg
 [nix-url]: https://builtwithnix.org
 [license-shield]: https://img.shields.io/github/license/tensorush/flakes.svg?style=for-the-badge&labelColor=black

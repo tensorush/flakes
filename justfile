@@ -1,7 +1,7 @@
-nrs HOST="utm-aarch64":
+nrs HOST="utm":
     nixos-rebuild switch --flake .#{{HOST}}
 
-tst HOST="utm-aarch64":
+tst HOST="utm":
     nixos-rebuild test --flake .#{{HOST}}
 
 fmt:
@@ -9,9 +9,6 @@ fmt:
 
 unl:
     nix run nixpkgs#git-crypt unlock
-
-gen:
-    nixos-generate-config
 
 upd:
     nix flake update

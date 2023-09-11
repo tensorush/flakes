@@ -12,16 +12,14 @@
 
   # Configure security settings.
   security = {
-    rtkit.enable = true;
-    pam.services.swaylock = { };
+    # rtkit.enable = true;
+    # pam.services.swaylock = { };
     sudo.wheelNeedsPassword = false;
   };
 
   # Configure program settings.
   programs = {
-    ssh.startAgent = true;
-    home-manager.enable = true;
-    gpg.agent = {
+    gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
     };
@@ -53,10 +51,9 @@
 
   # Configure networking settings.
   networking = {
-    useDHCP = false;
-    hostName = "utm-aarch64";
-    firewall.enable = false;
-    interfaces.enp0s10.useDHCP = true;
+    useDHCP = true;
+    #   firewall.enable = false;
+    #   hostName = "utm";
   };
 
   # Set time zone.
@@ -97,6 +94,9 @@
     '';
   };
 
+  # Specify host platform.
+  nixpkgs.hostPlatform = "aarch64-linux";
+
   # Allow unfree and unsupported packages.
   nixpkgs.config = {
     allowUnfree = true;
@@ -105,9 +105,6 @@
 
   # Enable services.
   services = {
-    # Enable QEMU agent.
-    services.spice-vdagentd.enable = true;
-
     # Enable OpenSSH daemon.
     openssh = {
       enable = true;
@@ -135,7 +132,7 @@
     # Configure X11 windowing system.
     xserver = {
       # Enable system.
-      dpi = 220;
+      dpi = 100;
       enable = true;
 
       # Configure keyboard layouts.
