@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # System state version - better not change it.
   system.stateVersion = "23.05";
 
@@ -36,7 +34,7 @@
   users.users.jora = {
     isNormalUser = true;
     shell = pkgs.nushell;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     # openssh.authorizedKeys.keys = [
     #   "ssh-ed25519  jora"
     # ];
@@ -69,7 +67,7 @@
   };
 
   # Set fonts.
-  fonts.fonts = [ pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; } ];
+  fonts.fonts = [pkgs.nerdfonts.override {fonts = ["CascadiaCode"];}];
 
   # Specify Nix daemon configuration.
   nix = {

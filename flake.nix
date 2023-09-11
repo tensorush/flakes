@@ -11,7 +11,11 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
     nixosConfigurations = {
       utm = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
