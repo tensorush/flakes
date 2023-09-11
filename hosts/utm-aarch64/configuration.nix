@@ -4,17 +4,44 @@
   # System state version - better not change it.
   system.stateVersion = "23.05";
 
-  # Don't require password for sudo.
-  security.sudo.wheelNeedsPassword = false;
+  # Set default user shell.
+  users.defaultUserShell = pkgs.nushell;
+
+  # Enable sound.
+  sound.enable = true;
+
+  # Configure security settings.
+  security = {
+    rtkit.enable = true;
+    pam.services.swaylock = { };
+    sudo.wheelNeedsPassword = false;
+  };
+
+  # Configure program settings.
+  programs = {
+    ssh.startAgent = true;
+    home-manager.enable = true;
+    gpg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+    # hyprland = {
+    #   enable = true;
+    #   xwayland = {
+    #     enable = true;
+    #     hidpi = true;
+    #   };
+    # };
+  };
 
   # Define user accounts. Don't forget to set passwords with ‘passwd’.
   users.users.jora = {
     isNormalUser = true;
     shell = pkgs.nushell;
     extraGroups = [ "networkmanager" "wheel" ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519  jora"
-    ];
+    # openssh.authorizedKeys.keys = [
+    #   "ssh-ed25519  jora"
+    # ];
   };
 
   # Use systemd-boot EFI boot loader.
@@ -27,7 +54,7 @@
   # Configure networking settings.
   networking = {
     useDHCP = false;
-    hostName = "tensorush";
+    hostName = "utm-aarch64";
     firewall.enable = false;
     interfaces.enp0s10.useDHCP = true;
   };
@@ -88,7 +115,24 @@
       settings.PasswordAuthentication = true;
     };
 
-    # Configure X11 windowing System.
+    # Enable sound with pipewire.
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+      alsa.support32Bit = true;
+    };
+
+    # Enable XDG Wayland portal.
+    # xdg.portal = {
+    #   enable = true;
+    #   wlr.enable = true;
+    #   extraPortals = with pkgs; [
+    #     xdg-desktop-portal-gtk
+    #   ];
+    # };
+
+    # Configure X11 windowing system.
     xserver = {
       # Enable system.
       dpi = 220;
@@ -97,20 +141,43 @@
       # Configure keyboard layouts.
       layout = "us, ru";
       xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
+
+      # Configure desktop manager.
+      desktopManager.plasma5.enable = true;
+      # desktopManager.xterm.enable = false;
+
+      # # Enable Hyprland display manager.
+      displayManager.sddm.enable = true;
+      # displayManager = {
+      #   defaultSession = "hyprland";
+      #   lightdm.enable = false;
+      #   gdm = {
+      #     enable = true;
+      #     wayland = true;
+      #   };
+      # };
     };
   };
+
+  environment.shells = with pkgs; [
+    nushell
+  ];
 
   # List packages installed in system.
   environment.systemPackages = with pkgs; [
     fd
     gh
     jq
+    sd
     bat
     eza
     fzf
     git
+    lsd
+    # sww
     curl
     just
+    # mako
     wget
     broot
     delta
@@ -119,20 +186,29 @@
     procs
     unzip
     bottom
+    # swaybg
     vscode
-    waybar
-    zellij
+    # waybar
     zoxide
     du-dust
     netdata
     nushell
     openssl
     ripgrep
+    wezterm
+    # wlogout
     starship
+    # swayidle
     tealdeer
     valgrind
     alejandra
     hyperfine
     difftastic
+    # hyprpicker
+    # rofi-wayland
+    # wl-clipboard
+    # swaylock-effects
+    # papirus-icon-theme
+    # rofi-wayland-unwrapped
   ];
 }

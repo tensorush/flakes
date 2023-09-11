@@ -1,17 +1,19 @@
 ## :snowflake: **flakes**
 
+[![CI][ci-shield]][ci-url]
+[![CD][cd-shield]][cd-url]
 [![Nix][nix-shield]][nix-url]
 [![License][license-shield]][license-url]
 
 ### My NixOS configuration flakes.
 
-<!--
-### :cloud_with_snow: Hosts
+### :cloud_with_snow: Systems
 
-|               Host                | Compositor |  Bar   | Switcher | Terminal |  Shell  | GUI / CLI Editor |
-|:---------------------------------:|:----------:|:------:|:--------:|:--------:|:-------:|:----------------:|
-| [UTM aarch64](hosts/utm-aarch64/) |  Hyprland  | Waybar |   Rofi   |  Zellij  | Nushell |  VSCode / Helix  |
--->
+|               Host                | Compositor |  Bar   | Launcher | Explorer | Terminal |  Shell  | Editor |
+|:---------------------------------:|:----------:|:------:|:--------:|:--------:|:--------:|:-------:|:------:|
+| [UTM aarch64](hosts/utm-aarch64/) |   Plasma   | Plasma |  Plasma  | Dolphin  | WezTerm  | Nushell | VSCode |
+
+<!-- |          Desktop x86_64           |   River    | Waybar |   Rofi   |  Thunar  | Alacritty | Nushell | Helix  | -->
 
 ### :snowman_with_snow: Resources
 
@@ -33,25 +35,37 @@
 
 - #### :card_file_box: [Awesome Nix Resources List](https://github.com/nix-community/awesome-nix)
 
+- #### :tv: [Nix Tutorial Series by Vimjoyer](https://www.youtube.com/playlist?list=PLko9chwSoP-15ZtZxu64k_CuTzXrFpxPE)
+
 - #### :man_technologist: [Nix Shorts Repo by Justin Woo](https://github.com/justinwoo/nix-shorts/)
 
 - #### :thought_balloon: [Nix Introduction Repo by tazjin](https://code.tvl.fyi/about/nix/nix-1p)
 
 - #### :tv: [Nix Tutorial Series by Jon Ringer](https://www.youtube.com/user/elitespartan117j27/videos)
 
+- #### :man_technologist: [NixOS Configuration by Ryan Yin](https://github.com/ryan4yin/nix-config)
+
 - #### :book: [NixOS & Flakes Book by Ryan Yin](https://nixos-and-flakes.thiscute.world/)
 
 - #### :tv: [NixOS Tutorial Series by Wil Taylor](https://www.youtube.com/playlist?list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
 
+- #### :man_technologist: [NixOS Configuration by Dustin Lyons](https://github.com/dustinlyons/nixos-config)
+
+- #### :man_technologist: [NixOS Configuration by Gabriel Volpe](https://github.com/gvolpe/nix-config)
+
+- #### :man_technologist: [NixOS Configuration by Mihai Fufezan](https://github.com/fufexan/dotfiles)
+
 - #### :thought_balloon: [Nix Flakes Blog Posts by Eelco Dolstra](https://www.tweag.io/blog/2020-05-25-flakes/)
+
+- #### :man_technologist: [NixOS Configuration by Gabriel Fontes](https://github.com/Misterio77/nix-config)
 
 - #### :tv: [NixOS Setup Guide by Matthias Benaets](https://www.youtube.com/watch?v=AGVXJ-TIv3Y&t=4s)
 
 - #### :tv: [Nixology Tutorial Series by Burke Libbey](https://www.youtube.com/playlist?list=PLRGI9KQ3_HP_OFRG6R-p4iFgMSK1t5BHs)
 
-- #### :thought_balloon: [How to Learn Nix Blog Posts by Ian Henry](https://ianthehenry.com/posts/how-to-learn-nix/)
+- #### :man_technologist: [NixOS Configuration by Bernardo Meurer](https://github.com/lovesegfault/nix-config)
 
-- #### :man_technologist: [Personal NixOS Configuration by Gabriel Volpe](https://github.com/gvolpe/nix-config)
+- #### :thought_balloon: [How to Learn Nix Blog Posts by Ian Henry](https://ianthehenry.com/posts/how-to-learn-nix/)
 
 - #### :thought_balloon: [Nix Programming Blog Posts by Sam Parkinson](https://www.sam.today/blog/environments-with-nix-shell-learning-nix-pt-1/)
 
@@ -69,6 +83,10 @@
 
 <!-- MARKDOWN LINKS -->
 
+[ci-shield]: https://img.shields.io/github/actions/workflow/status/tensorush/flakes/ci.yaml?branch=main&style=for-the-badge&logo=github&label=CI&labelColor=black
+[ci-url]: https://github.com/tensorush/flakes/blob/main/.github/workflows/ci.yaml
+[cd-shield]: https://img.shields.io/github/actions/workflow/status/tensorush/flakes/cd.yaml?branch=main&style=for-the-badge&logo=github&label=CD&labelColor=black
+[cd-url]: https://github.com/tensorush/flakes/blob/main/.github/workflows/cd.yaml
 [nix-shield]: https://builtwithnix.org/badge.svg
 [nix-url]: https://builtwithnix.org
 [license-shield]: https://img.shields.io/github/license/tensorush/flakes.svg?style=for-the-badge&labelColor=black

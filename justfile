@@ -1,14 +1,14 @@
-swt-sys:
-    nixos-rebuild switch --flake .#tensorush
+nrs HOST="utm-aarch64":
+    nixos-rebuild switch --flake .#{{HOST}}
 
-swt-hmm:
-    home-manager switch --flake .#tensorush
-
-tst:
-    nixos-rebuild test --flake .#tensorush
+tst HOST="utm-aarch64":
+    nixos-rebuild test --flake .#{{HOST}}
 
 fmt:
-    nix run nixpkgs#statix -- check ./
+    nix run nixpkgs#alejandra -- -c ./
+
+unl:
+    nix run nixpkgs#git-crypt unlock
 
 gen:
     nixos-generate-config
