@@ -11,7 +11,7 @@
   # Configure security settings.
   security = {
     rtkit.enable = true;
-    pam.services.swaylock = { };
+    pam.services.swaylock = {};
     sudo.wheelNeedsPassword = false;
   };
 
@@ -24,11 +24,11 @@
     };
 
     # Enable Rofi.
-    # rofi = {
-    #   enable = true;
-    #   terminal = "${pkgs.rio}/bin/rio";
-    #   theme = ../configs/rofi/theme.rafi;
-    # };
+    rofi = {
+      enable = true;
+      terminal = "${pkgs.rio}/bin/rio";
+      theme = ../configs/rofi/theme.rafi;
+    };
 
     # Enable Hyprland.
     hyprland = {
@@ -76,7 +76,7 @@
   };
 
   # Set fonts.
-  fonts.packages = with pkgs; [fira-code font-awesome ];
+  fonts.packages = with pkgs; [fira-code font-awesome];
 
   # Specify Nix daemon configuration.
   nix = {
@@ -128,13 +128,13 @@
     };
 
     # Enable XDG Wayland portal.
-    xdg.portal = {
-      enable = true;
-      wlr.enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-      ];
-    };
+    # xdg.portal = {
+    #   enable = true;
+    #   wlr.enable = true;
+    #   extraPortals = with pkgs; [
+    #     xdg-desktop-portal-gtk
+    #   ];
+    # };
 
     # Configure X11 windowing system.
     xserver = {
@@ -147,11 +147,9 @@
       xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
 
       # Configure desktop manager.
-      desktopManager.plasma5.enable = true;
-      # desktopManager.xterm.enable = false;
+      desktopManager.xterm.enable = false;
 
       # # Enable Hyprland display manager.
-      displayManager.sddm.enable = true;
       displayManager = {
         defaultSession = "hyprland";
         lightdm.enable = false;
@@ -179,9 +177,9 @@
     git
     nnn
     rio
-    sww
     just
     mako
+    swww
     wget
     broot
     delta
