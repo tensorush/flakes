@@ -2,8 +2,7 @@
   description = "My NixOS configuration flakes.";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";

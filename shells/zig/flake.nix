@@ -20,7 +20,6 @@
           nativeBuildInputs = with pkgs;
             [
               zig
-              zls
               zlib
               cmake
               ninja
@@ -31,10 +30,10 @@
               lld
               llvm
               clang
+              clang-unwrapped
             ]);
           hardeningDisable = ["all"];
           shellHook = ''
-            echo "zig `${pkgs.zig}/zig --version`"
             exec nu
           '';
         };

@@ -1,9 +1,11 @@
 {...}: {
+  # Configure Home settings.
   home = {
     username = "jora";
     stateVersion = "23.05";
     homeDirectory = "/home/jora";
   };
 
-  home-manager.enable = true;
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }

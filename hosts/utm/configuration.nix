@@ -10,24 +10,34 @@
 
   # Configure security settings.
   security = {
-    # rtkit.enable = true;
-    # pam.services.swaylock = { };
+    rtkit.enable = true;
+    pam.services.swaylock = { };
     sudo.wheelNeedsPassword = false;
   };
 
   # Configure program settings.
   programs = {
+    # Enable GPG agent.
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
     };
-    # hyprland = {
+
+    # Enable Rofi.
+    # rofi = {
     #   enable = true;
-    #   xwayland = {
-    #     enable = true;
-    #     hidpi = true;
-    #   };
+    #   terminal = "${pkgs.rio}/bin/rio";
+    #   theme = ../configs/rofi/theme.rafi;
     # };
+
+    # Enable Hyprland.
+    hyprland = {
+      enable = true;
+      xwayland = {
+        enable = true;
+        hidpi = true;
+      };
+    };
   };
 
   # Define user accounts. Don't forget to set passwords with ‘passwd’.
@@ -50,8 +60,7 @@
   # Configure networking settings.
   networking = {
     useDHCP = true;
-    #   firewall.enable = false;
-    #   hostName = "utm";
+    firewall.enable = false;
   };
 
   # Set time zone.
@@ -67,7 +76,7 @@
   };
 
   # Set fonts.
-  fonts.fonts = [pkgs.nerdfonts.override {fonts = ["CascadiaCode"];}];
+  fonts.packages = with pkgs; [fira-code font-awesome ];
 
   # Specify Nix daemon configuration.
   nix = {
@@ -119,13 +128,13 @@
     };
 
     # Enable XDG Wayland portal.
-    # xdg.portal = {
-    #   enable = true;
-    #   wlr.enable = true;
-    #   extraPortals = with pkgs; [
-    #     xdg-desktop-portal-gtk
-    #   ];
-    # };
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+      ];
+    };
 
     # Configure X11 windowing system.
     xserver = {
@@ -143,14 +152,14 @@
 
       # # Enable Hyprland display manager.
       displayManager.sddm.enable = true;
-      # displayManager = {
-      #   defaultSession = "hyprland";
-      #   lightdm.enable = false;
-      #   gdm = {
-      #     enable = true;
-      #     wayland = true;
-      #   };
-      # };
+      displayManager = {
+        defaultSession = "hyprland";
+        lightdm.enable = false;
+        gdm = {
+          enable = true;
+          wayland = true;
+        };
+      };
     };
   };
 
@@ -168,12 +177,11 @@
     eza
     fzf
     git
-    lsd
+    nnn
     rio
-    # sww
-    curl
+    sww
     just
-    # mako
+    mako
     wget
     broot
     delta
@@ -182,28 +190,26 @@
     procs
     unzip
     bottom
-    # swaybg
+    swaybg
     vscode
-    # waybar
+    waybar
     zoxide
     du-dust
-    netdata
     nushell
-    openssl
     ripgrep
-    # wlogout
+    wlogout
     starship
-    # swayidle
+    swayidle
     tealdeer
     valgrind
     alejandra
     hyperfine
     difftastic
-    # hyprpicker
-    # rofi-wayland
-    # wl-clipboard
-    # swaylock-effects
-    # papirus-icon-theme
-    # rofi-wayland-unwrapped
+    hyprpicker
+    rofi-wayland
+    wl-clipboard
+    swaylock-effects
+    papirus-icon-theme
+    rofi-wayland-unwrapped
   ];
 }

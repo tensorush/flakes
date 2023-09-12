@@ -14,10 +14,8 @@ upd:
     nix flake update
 
 upd-shl:
-    for dir in `ls ./shells`; do \
-        cd $dir; \
-        just upd; \
-        cd ../; \
+    for dir in `ls shells`; do \
+        cd shells/$dir && just upd; \
     done
 
 chk:
