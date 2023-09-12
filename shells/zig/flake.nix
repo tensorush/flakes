@@ -19,6 +19,7 @@
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = with pkgs;
             [
+              zig
               zls
               zlib
               cmake
@@ -32,6 +33,10 @@
               clang
             ]);
           hardeningDisable = ["all"];
+          shellHook = ''
+            echo "zig `${pkgs.zig}/zig --version`"
+            exec nu
+          '';
         };
       }
     );

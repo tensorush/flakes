@@ -169,6 +169,7 @@
     fzf
     git
     lsd
+    rio
     # sww
     curl
     just
@@ -190,7 +191,6 @@
     nushell
     openssl
     ripgrep
-    wezterm
     # wlogout
     starship
     # swayidle

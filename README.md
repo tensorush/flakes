@@ -2,7 +2,6 @@
 
 [![CI][ci-shield]][ci-url]
 [![CD][cd-shield]][cd-url]
-[![Nix][nix-shield]][nix-url]
 [![License][license-shield]][license-url]
 
 ### My NixOS configuration flakes.
@@ -11,9 +10,8 @@
 
 |       Host        | Compositor |  Bar   | Launcher | Explorer | Terminal |  Shell  | Editor |
 |:-----------------:|:----------:|:------:|:--------:|:--------:|:--------:|:-------:|:------:|
-| [UTM](hosts/utm/) |   Plasma   | Plasma |  Plasma  | Dolphin  | WezTerm  | Nushell | VSCode |
-
-<!-- |          Desktop x86_64           |   River    | Waybar |   Rofi   |  Thunar  | Alacritty | Nushell | Helix  | -->
+| [UTM](hosts/utm/) |  Hyprland  | Waybar |   Rofi   |   Nnn    |   Rio    | Nushell | VSCode |
+|      Desktop      |   River    | Waybar |   Rofi   |   Nnn    |   Rio    | Nushell | Helix  |
 
 ### :snowman_with_snow: Resources
 
@@ -67,6 +65,8 @@
 
 - #### :thought_balloon: [How to Learn Nix Blog Posts by Ian Henry](https://ianthehenry.com/posts/how-to-learn-nix/)
 
+- #### :man_technologist: [NixOS Configuration by Mitchell Hashimoto](https://github.com/mitchellh/nixos-config)
+
 - #### :thought_balloon: [Nix Programming Blog Posts by Sam Parkinson](https://www.sam.today/blog/environments-with-nix-shell-learning-nix-pt-1/)
 
 - #### :book: [NixOS in Production Book by Gabriella Gonzalez](https://leanpub.com/nixos-in-production)
@@ -87,7 +87,5 @@
 [ci-url]: https://github.com/tensorush/flakes/blob/main/.github/workflows/ci.yaml
 [cd-shield]: https://img.shields.io/github/actions/workflow/status/tensorush/flakes/cd.yaml?branch=main&style=for-the-badge&logo=github&label=CD&labelColor=black
 [cd-url]: https://github.com/tensorush/flakes/blob/main/.github/workflows/cd.yaml
-[nix-shield]: https://builtwithnix.org/badge.svg
-[nix-url]: https://builtwithnix.org
 [license-shield]: https://img.shields.io/github/license/tensorush/flakes.svg?style=for-the-badge&labelColor=black
 [license-url]: https://github.com/tensorush/flakes/blob/main/LICENSE.md

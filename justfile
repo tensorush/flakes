@@ -13,5 +13,12 @@ unl:
 upd:
     nix flake update
 
+upd-shl:
+    for dir in `ls ./shells`; do \
+        cd $dir; \
+        just upd; \
+        cd ../; \
+    done
+
 chk:
     nix flake check
