@@ -21,7 +21,7 @@
     rofi = {
       enable = true;
       terminal = "${pkgs.rio}/bin/rio";
-      theme = ../configs/rofi/theme.rafi;
+      theme = ../../configs/rofi/theme.rafi;
     };
   }
 }
