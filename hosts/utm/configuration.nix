@@ -17,19 +17,6 @@
 
   # Configure program settings.
   programs = {
-    # Enable GPG agent.
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
-
-    # Enable Rofi.
-    rofi = {
-      enable = true;
-      terminal = "${pkgs.rio}/bin/rio";
-      theme = ../configs/rofi/theme.rafi;
-    };
-
     # Enable Hyprland.
     hyprland = {
       enable = true;
@@ -104,12 +91,13 @@
   };
 
   # Specify host platform.
-  nixpkgs.hostPlatform = "aarch64-linux";
-
-  # Allow unfree and unsupported packages.
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnsupportedSystem = true;
+  nixpkgs = {
+    hostPlatform = "aarch64-linux";
+    # Allow unfree and unsupported packages.
+    config = {
+      allowUnfree = true;
+      allowUnsupportedSystem = true;
+    };
   };
 
   # Enable services.
