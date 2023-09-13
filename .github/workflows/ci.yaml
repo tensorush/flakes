@@ -24,5 +24,8 @@ jobs:
         with:
             github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Check flake
+        run: nix run nixpkgs#just chk
+
       - name: Format code
         run: nix run nixpkgs#just fmt

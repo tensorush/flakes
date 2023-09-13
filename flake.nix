@@ -5,25 +5,19 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    anyrun = {
-      url = "github:Kirottu/anyrun";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = {
+    self,
     nixpkgs,
     home-manager,
-    anyrun
   }: {
     nixosConfigurations = {
       utm = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
-        system.packages = [ anyrun.packages.${system}.anyrun ];
 
         modules = [
           ./hosts/utm/configuration.nix

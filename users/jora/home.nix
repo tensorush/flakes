@@ -1,4 +1,4 @@
-{}: {
+{...}: {
   # Configure Home settings.
   home = {
     username = "jora";

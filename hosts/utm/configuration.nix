@@ -1,4 +1,4 @@
-{pkgs}: {
+{pkgs, ...}: {
   # System state version - better not change it.
   system.stateVersion = "23.05";
 
@@ -33,10 +33,7 @@
     # Enable Hyprland.
     hyprland = {
       enable = true;
-      xwayland = {
-        enable = true;
-        hidpi = true;
-      };
+      xwayland.enable = true;
     };
   };
 
@@ -76,7 +73,12 @@
   };
 
   # Set fonts.
-  fonts.packages = with pkgs; [fira-code font-awesome];
+  fonts.packages = with pkgs; [
+    fira-code
+    font-awesome
+    cascadia-code
+    jetbrains-mono
+  ];
 
   # Specify Nix daemon configuration.
   nix = {
@@ -204,8 +206,10 @@
     hyperfine
     difftastic
     hyprpicker
+    rofi-wayland
     wl-clipboard
     swaylock-effects
     papirus-icon-theme
+    rofi-wayland-unwrapped
   ];
 }
