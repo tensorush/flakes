@@ -149,6 +149,8 @@
 
       # Wallpaper daemon
       swww
+      # Compositor
+      river
       # Lock screen
       waylock
       # Clipboard
@@ -198,7 +200,7 @@
       # File manager
       nnn
       # Terminal emulator
-      rio
+      foot
       # File downloader
       wget
       # Git pager
