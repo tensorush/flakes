@@ -37,6 +37,7 @@
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel"];
       openssh.authorizedKeys.keys = ["ssh-ed25519 vfKbuN/HZrVmcS4nGBEH8WMcc4xMU5im+C7cfD2J/kI jora"];
+    };
   };
 
   # Set time zone.
