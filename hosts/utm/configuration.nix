@@ -142,7 +142,7 @@
   # Configure environment settings.
   environment = {
     # Set shells.
-    shells = pkgs.nushell;
+    shells = [pkgs.nushell];
 
     # List packages installed in system.
     systemPackages = with pkgs; [
