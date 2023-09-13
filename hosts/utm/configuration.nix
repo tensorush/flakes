@@ -1,51 +1,12 @@
 {pkgs, ...}: {
-  # System state version - better not change it.
+  # System state version.
   system.stateVersion = "23.05";
-
-  # Set default user shell.
-  users.defaultUserShell = pkgs.nushell;
-
-  # Enable sound.
-  sound.enable = true;
-
-  # Configure security settings.
-  security = {
-    rtkit.enable = true;
-    pam.services.swaylock = {};
-    sudo.wheelNeedsPassword = false;
-  };
-
-  # Configure program settings.
-  programs = {
-    # Enable GPG agent.
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
-
-    # Enable Hyprland.
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-
-    # Enable Waybar.
-    waybar.enable = true;
-  };
-
-  # Define user accounts.
-  users.users.${user} = {
-    isNormalUser = true;
-    shell = pkgs.nushell;
-    extraGroups = ["networkmanager" "wheel"];
-    # openssh.authorizedKeys.keys = [
-    #   "ssh-ed25519  jora"
-    # ];
-  };
 
   # Configure boot settings.
   boot = {
+    # Install kernel packages.
     kernelPackages = pkgs.linuxPackages_latest;
+
     # Use systemd-boot EFI boot loader.
     loader = {
       systemd-boot.enable = true;
@@ -56,12 +17,42 @@
 
   # Configure networking settings.
   networking = {
-    useDHCP = true;
+    # Disable DHCP.
+    useDHCP = false;
+
+    # Disable Firewall.
     firewall.enable = false;
+  };
+
+  # Disable password for sudo.
+  security.sudo.wheelNeedsPassword = false;
+
+  # Configure user settings.
+  users = {
+    # Set default user shell.
+    defaultUserShell = pkgs.nushell;
+
+    # Define user accounts.
+    users.jora = {
+      isNormalUser = true;
+      extraGroups = ["networkmanager" "wheel"];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 vfKbuN/HZrVmcS4nGBEH8WMcc4xMU5im+C7cfD2J/kI jora"];
   };
 
   # Set time zone.
   time.timeZone = "Europe/Moscow";
+
+  # Specify font packages.
+  fonts.packages = with pkgs; [
+    cascadia-code
+    noto-fonts-emoji
+  ];
+
+  # Configure console settings.
+  console = {
+    keyMap = "us";
+    font = "Cascadia Code";
+  };
 
   # Select internationalisation properties.
   i18n = {
@@ -79,21 +70,7 @@
     };
   };
 
-  # Specify console configuration.
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  };
-
-  # Set fonts.
-  fonts.packages = with pkgs; [
-    fira-code
-    font-awesome
-    cascadia-code
-    jetbrains-mono
-  ];
-
-  # Specify Nix daemon configuration.
+  # Configure Nix settings.
   nix = {
     # Enable unstable package channel.
     package = pkgs.nixUnstable;
@@ -116,9 +93,11 @@
     '';
   };
 
-  # Specify host platform.
+  # Configure Nix Package settings.
   nixpkgs = {
+    # Specify host platform.
     hostPlatform = "aarch64-linux";
+
     # Allow unfree and unsupported packages.
     config = {
       allowUnfree = true;
@@ -126,21 +105,13 @@
     };
   };
 
-  # Enable services.
+  # Configure service settings.
   services = {
     # Enable OpenSSH daemon.
     openssh = {
       enable = true;
       settings.PermitRootLogin = "no";
       settings.PasswordAuthentication = true;
-    };
-
-    # Enable sound with pipewire.
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      pulse.enable = true;
-      alsa.support32Bit = true;
     };
 
     # Configure X11 windowing system.
@@ -152,111 +123,100 @@
       # Configure keyboard layouts.
       layout = "us, ru";
       xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
-
-      # Configure desktop manager.
-      desktopManager.cinnamon.enable = true;
-
-      # # Enable Hyprland display manager.
-      displayManager = {
-        defaultSession = "hyprland";
-        lightdm.enable = false;
-        gdm = {
-          enable = true;
-          wayland = true;
-        };
-      };
     };
   };
 
-  environment.shells = with pkgs; [
-    nushell
-  ];
+  # Configure program settings.
+  programs = {
+    # Enable Waybar.
+    waybar.enable = true;
 
-  # List packages installed in system.
-  environment.systemPackages = with pkgs; [
-    # Modern CLI program alternatives:
+    # Enable GPG agent.
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+  };
 
-    # find
-    fd
-    # sed
-    sd
-    # cat
-    bat
-    # ls
-    eza
-    # make
-    just
-    # tree
-    broot
-    # ps
-    procs
-    # htop
-    bottom
-    # cd
-    zoxide
-    # du
-    du-dust
-    # flamegraph
-    inferno
-    # grep
-    ripgrep
-    # tldr
-    tealdeer # outfieldr
-    # diff
-    difftastic
+  # Configure environment settings.
+  environment = {
+    # Set shells.
+    shells = pkgs.nushell;
 
-    # Other CLI programs:
+    # List packages installed in system.
+    systemPackages = with pkgs; [
+      # Wayland components:
 
-    # GitHub
-    gh
-    # JSON processor
-    jq
-    # Fuzzy finder
-    fzf
-    # Version control system
-    git
-    # File manager
-    nnn
-    # Terminal emulator
-    rio
-    # File downloader
-    wget
-    # Git pager
-    delta
-    # Encryption tool
-    # gnupg
-    # Editor
-    helix
-    # Shell
-    nushell
-    # Shell prompt
-    starship
-    # Profiling tool suite
-    valgrind
-    # Nix linter
-    alejandra
-    # Benchmarking tool
-    hyperfine
+      # Wallpaper daemon
+      swww
+      # Lock screen
+      waylock
+      # Clipboard
+      wl-clipboard
 
-    # Wayland components:
+      # Modern CLI program alternatives:
 
-    # Notification daemon
-    mako
-    # Wallpaper daemon
-    swww
-    # Wayland logout
-    wlogout
-    # Color picker
-    hyprpicker
-    # Widget system
-    eww-wayland
-    # App launcher
-    rofi-wayland
-    # Clipboard
-    wl-clipboard
-    # Lock screen
-    swaylock-effects
-    # Icon theme
-    papirus-icon-theme
-  ];
+      # find
+      fd
+      # sed
+      sd
+      # cat
+      bat
+      # ls
+      eza
+      # make
+      just
+      # tree
+      broot
+      # ps
+      procs
+      # htop
+      bottom
+      # cd
+      zoxide
+      # du
+      du-dust
+      # flamegraph
+      inferno
+      # grep
+      ripgrep
+      # tldr
+      tealdeer # outfieldr
+      # diff
+      difftastic
+
+      # Other CLI programs:
+
+      # GitHub
+      gh
+      # JSON processor
+      jq
+      # Fuzzy finder
+      fzf
+      # Version control system
+      git
+      # File manager
+      nnn
+      # Terminal emulator
+      rio
+      # File downloader
+      wget
+      # Git pager
+      delta
+      # Encryption tool
+      gnupg
+      # Editor
+      helix
+      # Shell
+      nushell
+      # Shell prompt
+      starship
+      # Profiling tool suite
+      valgrind
+      # Nix linter
+      alejandra
+      # Benchmarking tool
+      hyperfine
+    ];
+  };
 }

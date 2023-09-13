@@ -38,18 +38,8 @@
                   homeDirectory = "/home/${user}";
                 };
 
-                # Configure program settings.
-                programs = {
-                  # Let Home Manager install and manage itself.
-                  home-manager.enable = true;
-
-                  # Enable Rofi.
-                  rofi = {
-                    enable = true;
-                    terminal = "${pkgs.rio}/bin/rio";
-                    theme = ./configs/rofi/theme.rafi;
-                  };
-                };
+                # Let Home Manager install and manage itself.
+                programs.home-manager.enable = true;
               };
             };
           }

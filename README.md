@@ -8,9 +8,9 @@
 
 ### :cloud_with_snow: Systems
 
-|       Host        | Compositor |   Lock   |  Bar   | Launcher | Explorer | Terminal |  Shell  | Editor |
-|:-----------------:|:----------:|:--------:|:------:|:--------:|:--------:|:--------:|:-------:|:------:|
-| [UTM](hosts/utm/) |  Hyprland  | Swaylock | Waybar |   Rofi   |   Nnn    |   Rio    | Nushell | Helix  |
+|   Host    | Compositor  |     Lock      |     Bar      | Explorer  |  Terminal  |     Shell     |   Editor    |
+|:---------:|:-----------:|:-------------:|:------------:|:---------:|:----------:|:-------------:|:-----------:|
+| [UTM][vm] | [River][rc] | [Waylock][wl] | [Waybar][wb] | [Nnn][n3] | [Foot][ft] | [Nushell][ns] | [Helix][he] |
 
 ### :snowman_with_snow: Resources
 
@@ -94,3 +94,12 @@
 [cd-url]: https://github.com/tensorush/flakes/blob/main/.github/workflows/cd.yaml
 [license-shield]: https://img.shields.io/github/license/tensorush/flakes.svg?style=for-the-badge&labelColor=black
 [license-url]: https://github.com/tensorush/flakes/blob/main/LICENSE.md
+
+[vm]: hosts/utm/
+[rc]: https://github.com/riverwm/river
+[wl]: https://github.com/ifreund/waylock
+[wb]: https://github.com/Alexays/Waybar
+[n3]: https://github.com/jarun/nnn
+[ft]: https://codeberg.org/dnkl/foot/
+[ns]: https://github.com/nushell/nushell
+[he]: https://github.com/helix-editor/helix
