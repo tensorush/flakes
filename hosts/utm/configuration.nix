@@ -17,6 +17,12 @@
 
   # Configure program settings.
   programs = {
+    # Enable GPG agent.
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+
     # Enable Hyprland.
     hyprland = {
       enable = true;
