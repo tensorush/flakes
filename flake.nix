@@ -15,7 +15,9 @@
     nixpkgs,
     home-manager,
   }: {
-    nixosConfigurations = {
+    nixosConfigurations = let
+      user = "jora";
+    in {
       utm = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
 
@@ -25,9 +27,31 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jora = import ./users/jora/home.nix;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.${user} = {
+                # Configure Home settings.
+                home = {
+                  username = user;
+                  stateVersion = "23.05";
+                  homeDirectory = "/home/${user}";
+                };
+
+                # Configure program settings.
+                programs = {
+                  # Let Home Manager install and manage itself.
+                  home-manager.enable = true;
+
+                  # Enable Rofi.
+                  rofi = {
+                    enable = true;
+                    terminal = "${pkgs.rio}/bin/rio";
+                    theme = ./configs/rofi/theme.rafi;
+                  };
+                };
+              };
+            };
           }
         ];
       };

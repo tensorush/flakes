@@ -8,10 +8,9 @@
 
 ### :cloud_with_snow: Systems
 
-|       Host        |   Theme    | Compositor |  Bar   | Launcher | Explorer | Terminal |  Shell  | Editor |
-|:-----------------:|:----------:|:----------:|:------:|:--------:|:--------:|:--------:|:-------:|:------:|
-| [UTM](hosts/utm/) |  Gruvbox   |  Hyprland  | Waybar |   Rofi   |   Nnn    |   Rio    | Nushell | VSCode |
-|      Desktop      | Catppuccin |   River    | Waybar |   Rofi   |   Nnn    |   Rio    | Nushell | Helix  |
+|       Host        | Compositor |   Lock   |  Bar   | Launcher | Explorer | Terminal |  Shell  | Editor |
+|:-----------------:|:----------:|:--------:|:------:|:--------:|:--------:|:--------:|:-------:|:------:|
+| [UTM](hosts/utm/) |  Hyprland  | Swaylock | Waybar |   Rofi   |   Nnn    |   Rio    | Nushell | Helix  |
 
 ### :snowman_with_snow: Resources
 
@@ -23,6 +22,8 @@
 
 - #### :black_joker: [NixOS Cheat Sheet](https://nixos.wiki/index.php?title=Cheatsheet&useskin=vector)
 
+- #### :globe_with_meridians: [Zero to Nix Web Site](https://zero-to-nix.com/)
+
 - #### :tv: [Summer of Nix 2022](https://www.youtube.com/playlist?list=PLt4-_lkyRrOMWyp5G-m_d1wtTcbBaOxZk)
 
 - #### :globe_with_meridians: [NixOS Wiki Web Site](https://nixos.wiki/)
@@ -30,6 +31,8 @@
 - #### :book: [Nix Reference Manual](https://nixos.org/manual/nix/stable/language/)
 
 - #### :globe_with_meridians: [NixOS Learn Web Site](https://nixos.org/learn.html)
+
+- #### :thought_balloon: [Determinate Systems Blog](https://determinate.systems/#blog)
 
 - #### :card_file_box: [Awesome Nix Resources List](https://github.com/nix-community/awesome-nix)
 
@@ -56,6 +59,8 @@
 - #### :thought_balloon: [Nix Flakes Blog Posts by Eelco Dolstra](https://www.tweag.io/blog/2020-05-25-flakes/)
 
 - #### :man_technologist: [NixOS Configuration by Gabriel Fontes](https://github.com/Misterio77/nix-config)
+
+- #### :man_technologist: [NixOS Configuration by Jackson Novak](https://gitlab.com/Oglo12/nixos-config)
 
 - #### :tv: [NixOS Setup Guide by Matthias Benaets](https://www.youtube.com/watch?v=AGVXJ-TIv3Y&t=4s)
 

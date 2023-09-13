@@ -28,10 +28,13 @@
       enable = true;
       xwayland.enable = true;
     };
+
+    # Enable Waybar.
+    waybar.enable = true;
   };
 
-  # Define user accounts. Don't forget to set passwords with ‘passwd’.
-  users.users.jora = {
+  # Define user accounts.
+  users.users.${user} = {
     isNormalUser = true;
     shell = pkgs.nushell;
     extraGroups = ["networkmanager" "wheel"];
@@ -40,11 +43,15 @@
     # ];
   };
 
-  # Use systemd-boot EFI boot loader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-    systemd-boot.configurationLimit = 10;
+  # Configure boot settings.
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    # Use systemd-boot EFI boot loader.
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      systemd-boot.configurationLimit = 10;
+    };
   };
 
   # Configure networking settings.
@@ -57,7 +64,20 @@
   time.timeZone = "Europe/Moscow";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_TIME = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+    };
+  };
 
   # Specify console configuration.
   console = {
@@ -123,15 +143,6 @@
       alsa.support32Bit = true;
     };
 
-    # Enable XDG Wayland portal.
-    # xdg.portal = {
-    #   enable = true;
-    #   wlr.enable = true;
-    #   extraPortals = with pkgs; [
-    #     xdg-desktop-portal-gtk
-    #   ];
-    # };
-
     # Configure X11 windowing system.
     xserver = {
       # Enable system.
@@ -143,7 +154,7 @@
       xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
 
       # Configure desktop manager.
-      desktopManager.xterm.enable = false;
+      desktopManager.cinnamon.enable = true;
 
       # # Enable Hyprland display manager.
       displayManager = {
@@ -163,47 +174,89 @@
 
   # List packages installed in system.
   environment.systemPackages = with pkgs; [
+    # Modern CLI program alternatives:
+
+    # find
     fd
-    gh
-    jq
+    # sed
     sd
+    # cat
     bat
+    # ls
     eza
-    fzf
-    git
-    nnn
-    rio
+    # make
     just
-    mako
-    swww
-    wget
+    # tree
     broot
-    delta
-    gnupg
-    helix
+    # ps
     procs
-    unzip
+    # htop
     bottom
-    swaybg
-    vscode
-    waybar
+    # cd
     zoxide
+    # du
     du-dust
-    nushell
+    # flamegraph
+    inferno
+    # grep
     ripgrep
-    wlogout
-    starship
-    swayidle
-    tealdeer
-    valgrind
-    alejandra
-    hyperfine
+    # tldr
+    tealdeer # outfieldr
+    # diff
     difftastic
+
+    # Other CLI programs:
+
+    # GitHub
+    gh
+    # JSON processor
+    jq
+    # Fuzzy finder
+    fzf
+    # Version control system
+    git
+    # File manager
+    nnn
+    # Terminal emulator
+    rio
+    # File downloader
+    wget
+    # Git pager
+    delta
+    # Encryption tool
+    # gnupg
+    # Editor
+    helix
+    # Shell
+    nushell
+    # Shell prompt
+    starship
+    # Profiling tool suite
+    valgrind
+    # Nix linter
+    alejandra
+    # Benchmarking tool
+    hyperfine
+
+    # Wayland components:
+
+    # Notification daemon
+    mako
+    # Wallpaper daemon
+    swww
+    # Wayland logout
+    wlogout
+    # Color picker
     hyprpicker
+    # Widget system
+    eww-wayland
+    # App launcher
     rofi-wayland
+    # Clipboard
     wl-clipboard
+    # Lock screen
     swaylock-effects
+    # Icon theme
     papirus-icon-theme
-    rofi-wayland-unwrapped
   ];
 }

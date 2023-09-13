@@ -29,7 +29,6 @@
               lld
               llvm
               clang
-              clang-unwrapped
             ]);
           hardeningDisable = ["all"];
           shellHook = ''

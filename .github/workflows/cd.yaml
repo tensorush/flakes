@@ -27,6 +27,9 @@ jobs:
       - name: Update flake
         run: nix run nixpkgs#just upd
 
+      - name: Update shell flakes
+        run: nix run nixpkgs#just upd-shls
+
       - name: Commit changes
         id: commit
         uses: stefanzweifel/git-auto-commit-action@v4
