@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs}: {
   # System state version - better not change it.
   system.stateVersion = "23.05";
 
@@ -204,10 +204,8 @@
     hyperfine
     difftastic
     hyprpicker
-    rofi-wayland
     wl-clipboard
     swaylock-effects
     papirus-icon-theme
-    rofi-wayland-unwrapped
   ];
 }

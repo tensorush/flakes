@@ -8,10 +8,10 @@
 
 ### :cloud_with_snow: Systems
 
-|       Host        | Compositor |  Bar   | Launcher | Explorer | Terminal |  Shell  | Editor |
-|:-----------------:|:----------:|:------:|:--------:|:--------:|:--------:|:-------:|:------:|
-| [UTM](hosts/utm/) |  Hyprland  | Waybar |   Rofi   |   Nnn    |   Rio    | Nushell | VSCode |
-|      Desktop      |   River    | Waybar |   Rofi   |   Nnn    |   Rio    | Nushell | Helix  |
+|       Host        |   Theme    | Compositor |  Bar   | Launcher | Explorer | Terminal |  Shell  | Editor |
+|:-----------------:|:----------:|:----------:|:------:|:--------:|:--------:|:--------:|:-------:|:------:|
+| [UTM](hosts/utm/) |  Gruvbox   |  Hyprland  | Waybar |  Anyrun  |   Nnn    |   Rio    | Nushell | VSCode |
+|      Desktop      | Catppuccin |   River    | Waybar |  Anyrun  |   Nnn    |   Rio    | Nushell | Helix  |
 
 ### :snowman_with_snow: Resources
 
