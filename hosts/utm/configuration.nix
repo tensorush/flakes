@@ -1,4 +1,4 @@
-{pkgs, USER, ...}: {
+{pkgs, userName, ...}: {
   # System state version.
   system.stateVersion = "23.05";
 
@@ -33,10 +33,10 @@
     defaultUserShell = pkgs.nushell;
 
     # Define user accounts.
-    users.${USER} = {
+    users.${userName} = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel"];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 vfKbuN/HZrVmcS4nGBEH8WMcc4xMU5im+C7cfD2J/kI ${USER}"];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 vfKbuN/HZrVmcS4nGBEH8WMcc4xMU5im+C7cfD2J/kI ${userName}"];
     };
   };
 
@@ -146,8 +146,8 @@
 
     # Set variables.
     variables = {
-      NU_CONFIG_DIR = "/home/${USER}/dotfiles/shells/nushell";
-      STARSHIP_CONFIG = "/home/${USER}/dotfiles/prompts/starship/starship.toml";
+      NU_CONFIG_DIR = "/home/${userName}/dotfiles/shells/nushell";
+      STARSHIP_CONFIG = "/home/${userName}/dotfiles/prompts/starship/starship.toml";
     };
 
     # List packages installed in system.
