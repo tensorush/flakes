@@ -25,28 +25,6 @@
           ./hosts/utm/configuration.nix
           ./hosts/utm/hardware-configuration.nix
 
-          # Set environment variables.
-          environment.variables
-          {
-            XDG_CONFIG_HOME = "/home/${USER}/dotfiles";
-            NU_CONFIG_DIR = "${XDG_CONFIG_HOME}/shells/nushell";
-            STARSHIP_CONFIG = "${XDG_CONFIG_HOME}/prompts/starship/starship.toml";
-          }
-
-          # Configure user settings.
-          users
-          {
-            # Set default user shell.
-            defaultUserShell = pkgs.nushell;
-
-            # Define user accounts.
-            users.${USER} = {
-              isNormalUser = true;
-              extraGroups = ["networkmanager" "wheel"];
-              openssh.authorizedKeys.keys = ["ssh-ed25519 vfKbuN/HZrVmcS4nGBEH8WMcc4xMU5im+C7cfD2J/kI ${USER}"];
-            };
-          }
-
           # Configure Home Manager settings.
           home-manager.nixosModules.home-manager
           {

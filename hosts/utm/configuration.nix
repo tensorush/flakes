@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, USER, ...}: {
   # System state version.
   system.stateVersion = "23.05";
 
@@ -26,6 +26,19 @@
 
   # Disable password for sudo.
   security.sudo.wheelNeedsPassword = false;
+
+  # Configure user settings.
+  users = {
+    # Set default user shell.
+    defaultUserShell = pkgs.nushell;
+
+    # Define user accounts.
+    users.${USER} = {
+      isNormalUser = true;
+      extraGroups = ["networkmanager" "wheel"];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 vfKbuN/HZrVmcS4nGBEH8WMcc4xMU5im+C7cfD2J/kI ${USER}"];
+    };
+  };
 
   # Set time zone.
   time.timeZone = "Europe/Moscow";
@@ -130,6 +143,13 @@
   environment = {
     # Set shells.
     shells = [pkgs.nushell];
+
+    # Set variables.
+    variables = {
+      XDG_CONFIG_HOME = "/home/${USER}/dotfiles";
+      NU_CONFIG_DIR = "${XDG_CONFIG_HOME}/shells/nushell";
+      STARSHIP_CONFIG = "${XDG_CONFIG_HOME}/prompts/starship/starship.toml";
+    };
 
     # List packages installed in system.
     systemPackages = with pkgs; [
