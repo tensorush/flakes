@@ -3,6 +3,9 @@
   userName,
   ...
 }: {
+  # Import hardware configuration.
+  imports = [./hardware-configuration.nix];
+
   # System state version.
   system.stateVersion = "23.05";
 

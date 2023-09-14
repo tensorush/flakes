@@ -14,20 +14,31 @@
     self,
     nixpkgs,
     home-manager,
-  }: let
-    userName = "jora";
-  in {
-    nixosConfigurations = {
+  }: {
+    nixosConfigurations = let
+      userName = "jora";
+    in {
       utm = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/utm/configuration.nix ./hosts/utm/hardware-configuration.nix];
         specialArgs = {inherit userName;};
-      };
-    };
+        modules = [
+          ./hosts/utm/configuration.nix
 
-    homeConfigurations = {
-      ${userName} = home-manager.lib.homeManagerConfiguration {
-        modules = [./users/${userName}/home.nix];
-        extraSpecialArgs = {inherit userName;};
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.${userName} = {
+                home = {
+                  username = userName;
+                  stateVersion = "23.05";
+                  homeDirectory = "/home/${userName}";
+                };
+                programs.home-manager.enable = true;
+              };
+            };
+          }
+        ];
       };
     };
   };
