@@ -146,9 +146,8 @@
 
     # Set variables.
     variables = {
-      XDG_CONFIG_HOME = "/home/${USER}/dotfiles";
-      NU_CONFIG_DIR = "${XDG_CONFIG_HOME}/shells/nushell";
-      STARSHIP_CONFIG = "${XDG_CONFIG_HOME}/prompts/starship/starship.toml";
+      NU_CONFIG_DIR = "/home/${USER}/dotfiles/shells/nushell";
+      STARSHIP_CONFIG = "/home/${USER}/dotfiles/prompts/starship/starship.toml";
     };
 
     # List packages installed in system.
