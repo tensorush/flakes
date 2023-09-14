@@ -27,10 +27,9 @@
 
           # Set environment variables.
           environment.variables = {
-            HOME = "/home/${USER}";
-            XDG_CONFIG_HOME = "${HOME}/.config";
-            NU_CONFIG_DIR = "${HOME}/dotfiles/shells/nushell";
-            STARSHIP_CONFIG = "${HOME}/dotfiles/prompts/starship/starship.toml";
+            XDG_CONFIG_HOME = "/home/${USER}/dotfiles";
+            NU_CONFIG_DIR = "${XDG_CONFIG_HOME}/shells/nushell";
+            STARSHIP_CONFIG = "${XDG_CONFIG_HOME}/prompts/starship/starship.toml";
           };
 
           # Configure user settings.
