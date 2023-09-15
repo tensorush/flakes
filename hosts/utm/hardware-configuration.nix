@@ -1,4 +1,4 @@
-{modulesPath, ...}: {
+{lib, pkgs, modulesPath, ...}: {
   imports = [(modulesPath + "/profiles/qemu-guest.nix")];
 
   system.stateVersion = "23.05";
@@ -31,10 +31,10 @@
   security.sudo.wheelNeedsPassword = false;
 
   networking = {
-    useDHCP = true;
     hostName = "nixos";
     firewall.enable = false;
     networkmanager.enable = true;
+    useDHCP = lib.mkDefault true;
   };
 
   nix = {

@@ -47,7 +47,7 @@
       desktopManager.lxqt.enable = true;
       displayManager.lightdm.enable = true;
       displayManager.autoLogin.enable = true;
-      displayManager.autoLogin.jora = userName;
+      displayManager.autoLogin.user = userName;
       xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
     };
   };
