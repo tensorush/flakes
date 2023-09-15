@@ -93,17 +93,38 @@
     };
   };
 
-  # Configure service settings.
   services = {
-    dpi = 100;
-    enable = true;
-    layout = "us";
+    # Enable OpenSSH daemon.
+    openssh = {
+      enable = true;
+      settings.PermitRootLogin = "no";
+      settings.PasswordAuthentication = true;
+    };
 
-    windowManager.i3.enable = true;
+    # Configure X11 windowing system.
+    xserver = {
+      # Enable system.
+      dpi = 100;
+      enable = true;
 
-    displayManager = {
-      lightdm.enable = true;
-      defaultSession = "none+i3";
+      # Configure keyboard layouts.
+      layout = "us, ru";
+      xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
+
+      # Configure window manager.
+      windowManager.i3.enable = true;
+
+      # Configure desktop manager.
+      desktopManager = {
+        xterm.enable = false;
+        wallpaper.mode = "fill";
+      };
+
+      # Enable display manager.
+      displayManager = {
+        lightdm.enable = true;
+        defaultSession = "none+i3";
+      };
     };
   };
 
