@@ -8,9 +8,9 @@
 
 ### :cloud_with_snow: Systems
 
-|   Host    | Compositor |     Bar      |  Explorer  |  Terminal  |     Shell     |   Editor    |
-|:---------:|:----------:|:------------:|:----------:|:----------:|:-------------:|:-----------:|
-| [UTM][vm] |  [i3][i3]  | [Waybar][wb] | [Yazi][yz] | [Foot][ft] | [Nushell][ns] | [Helix][he] |
+|   Host    |  Desktop   |    Bar     |  Explorer  |  Terminal  |     Shell     | CLI Editor  |  GUI Editor  |
+|:---------:|:----------:|:----------:|:----------:|:----------:|:-------------:|:-----------:|:------------:|
+| [UTM][vm] | [LXQT][lq] | [LXQT][lq] | [Yazi][yz] | [Foot][ft] | [Nushell][ns] | [Helix][he] | [VSCode][he] |
 
 ### :snowman_with_snow: Resources
 
@@ -96,7 +96,7 @@
 [license-url]: https://github.com/tensorush/flakes/blob/main/LICENSE.md
 
 [vm]: hosts/utm/
-[i3]: https://i3wm.org/
+[lq]: https://github.com/lxqt/lxqt
 [wb]: https://github.com/Alexays/Waybar
 [yz]: https://github.com/sxyazi/yazi
 [ft]: https://codeberg.org/dnkl/foot/

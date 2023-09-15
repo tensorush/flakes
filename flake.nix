@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +21,6 @@
         specialArgs = {inherit userName;};
         modules = [
           ./hosts/utm/configuration.nix
-
           home-manager.nixosModules.home-manager
           {
             home-manager = {
