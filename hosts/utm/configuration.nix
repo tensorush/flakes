@@ -62,7 +62,7 @@
 
   environment = {
     shells = [pkgs.nushell];
-    environment.sessionVariables = rec {
+    sessionVariables = rec {
       NU_CONFIG_DIR = "$HOME/dotfiles/shells/nushell";
       STARSHIP_CONFIG = "$HOME/dotfiles/prompts/starship/starship.toml";
     };
