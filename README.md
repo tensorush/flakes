@@ -8,9 +8,9 @@
 
 ### :cloud_with_snow: Systems
 
-|   Host    |  Desktop   |    Bar     |  Explorer  |  Terminal  |     Shell     | CLI Editor  |  GUI Editor  |
-|:---------:|:----------:|:----------:|:----------:|:----------:|:-------------:|:-----------:|:------------:|
-| [UTM][vm] | [LXQT][lq] | [LXQT][lq] | [Yazi][yz] | [Foot][ft] | [Nushell][ns] | [Helix][he] | [VSCode][he] |
+|   Host    |  Desktop   |    Bar     |  Explorer  |    Terminal     |     Shell     | CLI Editor  |  GUI Editor  |
+|:---------:|:----------:|:----------:|:----------:|:---------------:|:-------------:|:-----------:|:------------:|
+| [UTM][vm] | [LXQT][lq] | [LXQT][lq] | [Yazi][yz] | [Alacritty][at] | [Nushell][ns] | [Helix][he] | [VSCode][he] |
 
 ### :snowman_with_snow: Resources
 
@@ -99,6 +99,6 @@
 [lq]: https://github.com/lxqt/lxqt
 [wb]: https://github.com/Alexays/Waybar
 [yz]: https://github.com/sxyazi/yazi
-[ft]: https://codeberg.org/dnkl/foot/
+[at]: https://github.com/alacritty/alacritty
 [ns]: https://github.com/nushell/nushell
 [he]: https://github.com/helix-editor/helix
