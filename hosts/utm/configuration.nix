@@ -43,7 +43,6 @@
     users.${userName} = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel"];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 vfKbuN/HZrVmcS4nGBEH8WMcc4xMU5im+C7cfD2J/kI ${userName}"];
     };
   };
 
@@ -56,16 +55,8 @@
     noto-fonts-emoji
   ];
 
-  # Configure console settings.
-  console = {
-    keyMap = "us";
-    font = "Cascadia Code";
-  };
-
   # Select internationalisation properties.
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-  };
+  i18n.defaultLocale = "en_US.UTF-8";
 
   # Configure Nix settings.
   nix = {
@@ -104,11 +95,20 @@
 
   # Configure service settings.
   services = {
-    # Enable OpenSSH daemon.
-    openssh = {
-      enable = true;
-      settings.PermitRootLogin = "no";
-      settings.PasswordAuthentication = true;
+    dpi = 100;
+    enable = true;
+    layout = "us";
+
+    windowManager.i3.enable = true;
+
+    desktopManager = {
+      xterm.enable = false;
+      wallpaper.mode = "fill";
+    };
+
+    displayManager = {
+      lightdm.enable = true;
+      defaultSession = "none+i3";
     };
   };
 
@@ -129,25 +129,8 @@
     # Set shells.
     shells = [pkgs.nushell];
 
-    # Set variables.
-    variables = {
-      NU_CONFIG_DIR = "/home/${userName}/dotfiles/shells/nushell";
-      STARSHIP_CONFIG = "/home/${userName}/dotfiles/prompts/starship/starship.toml";
-    };
-
     # List packages installed in system.
     systemPackages = with pkgs; [
-      # Wayland components:
-
-      # Wallpaper daemon
-      swww
-      # Compositor
-      river
-      # Lock screen
-      waylock
-      # Clipboard
-      wl-clipboard
-
       # Modern CLI program alternatives:
 
       # find
