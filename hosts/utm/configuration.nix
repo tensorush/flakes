@@ -67,6 +67,8 @@
 
       # Editor
       vscode
+      # Browser
+      brave
 
       # Modern CLI program alternatives:
 
@@ -109,16 +111,12 @@
       fzy
       # Version control system
       git
-      # Terminal emulator
-      foot
       # File downloader
       wget
       # File manager
       yazi
       # Git pager
       delta
-      # Encryption tool
-      gnupg
       # Editor
       helix
       # Shell
@@ -127,6 +125,8 @@
       starship
       # Profiling tool suite
       valgrind
+      # Terminal emulator
+      alacritty
       # Nix linter
       alejandra
       # Benchmarking tool
