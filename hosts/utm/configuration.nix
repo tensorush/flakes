@@ -65,17 +65,6 @@
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = {
-      LC_TIME = "en_US.UTF-8";
-      LC_NAME = "en_US.UTF-8";
-      LC_PAPER = "en_US.UTF-8";
-      LC_NUMERIC = "en_US.UTF-8";
-      LC_ADDRESS = "en_US.UTF-8";
-      LC_MONETARY = "en_US.UTF-8";
-      LC_TELEPHONE = "en_US.UTF-8";
-      LC_MEASUREMENT = "en_US.UTF-8";
-      LC_IDENTIFICATION = "en_US.UTF-8";
-    };
   };
 
   # Configure Nix settings.
@@ -120,17 +109,6 @@
       enable = true;
       settings.PermitRootLogin = "no";
       settings.PasswordAuthentication = true;
-    };
-
-    # Configure X11 windowing system.
-    xserver = {
-      # Enable system.
-      dpi = 100;
-      enable = true;
-
-      # Configure keyboard layouts.
-      layout = "us, ru";
-      xkbOptions = "eurosign:e, compose:menu, grp:alt_shift_toggle";
     };
   };
 
@@ -208,15 +186,15 @@
       # JSON processor
       jq
       # Fuzzy finder
-      fzf
+      fzy
       # Version control system
       git
-      # File manager
-      nnn
       # Terminal emulator
       foot
       # File downloader
       wget
+      # File manager
+      yazi
       # Git pager
       delta
       # Encryption tool
