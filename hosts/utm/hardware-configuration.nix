@@ -1,4 +1,9 @@
-{lib, pkgs, modulesPath, ...}: {
+{
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}: {
   imports = [(modulesPath + "/profiles/qemu-guest.nix")];
 
   system.stateVersion = "23.05";
@@ -26,11 +31,7 @@
     fsType = "vfat";
   };
 
-  swapDevices = [
-    {
-      device = "/dev/disk/by-uuid/0f368cb9-2c85-4fb4-974f-697b3e1ceaf4";
-    }
-  ];
+  swapDevices = [{device = "/dev/disk/by-uuid/0f368cb9-2c85-4fb4-974f-697b3e1ceaf4";}];
 
   security.sudo.wheelNeedsPassword = false;
 
