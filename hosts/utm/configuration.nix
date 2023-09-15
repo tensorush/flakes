@@ -72,7 +72,7 @@
       # Editor
       vscode
       # Browser
-      brave
+      firefox
 
       # Modern CLI program alternatives:
 

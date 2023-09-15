@@ -1,5 +1,5 @@
 nrs HOST="utm":
-    nixos-rebuild switch --flake .#{{HOST}}
+    sudo nixos-rebuild switch --flake .#{{HOST}}
 
 tst HOST="utm":
     nixos-rebuild test --flake .#{{HOST}}
