@@ -101,11 +101,6 @@
 
     windowManager.i3.enable = true;
 
-    desktopManager = {
-      xterm.enable = false;
-      wallpaper.mode = "fill";
-    };
-
     displayManager = {
       lightdm.enable = true;
       defaultSession = "none+i3";
