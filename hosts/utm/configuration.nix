@@ -73,6 +73,8 @@
       vscode
       # Browser
       firefox
+      # Terminal emulator
+      alacritty
 
       # Modern CLI program alternatives:
 
@@ -129,8 +131,6 @@
       starship
       # Profiling tool suite
       valgrind
-      # Terminal emulator
-      alacritty
       # Nix linter
       alejandra
       # Benchmarking tool
