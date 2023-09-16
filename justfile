@@ -15,7 +15,7 @@ upd:
 
 upd-shls:
     for dir in `ls shells`; do \
-        cd shells/$dir && nix run nixpkgs#just upd; \
+        cd shells/$dir && nix flake update; \
     done
 
 chk:
