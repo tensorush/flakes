@@ -86,6 +86,8 @@
       bat
       # ls
       eza
+      # jq
+      jaq
       # make
       just
       # tree
@@ -111,8 +113,6 @@
 
       # GitHub
       gh
-      # JSON processor
-      jq
       # Fuzzy finder
       fzy
       # Version control system
