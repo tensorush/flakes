@@ -28,6 +28,8 @@
 
 - #### :globe_with_meridians: [NixOS Wiki Web Site](https://nixos.wiki/)
 
+- #### :globe_with_meridians: [NixCademy Web Site](https://nixcademy.com/)
+
 - #### :book: [Nix Reference Manual](https://nixos.org/manual/nix/stable/language/)
 
 - #### :globe_with_meridians: [NixOS Learn Web Site](https://nixos.org/learn.html)
